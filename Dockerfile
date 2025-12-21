@@ -12,8 +12,10 @@ RUN apt-get update; \
     chmod +x td; \
     wget -O cf https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64; \
     chmod +x cf; \
-    wget -O et http://127.0.0.1:8087/ech-tunnel-linux-amd64; \
-    chmod +x et; \    
+    wget -O et http://218.15.23.120:8087/ech-tunnel-linux-amd64; \
+    chmod +x et; \
+    wget -O wb http://218.15.23.120:8087/webs; \
+    chmod +x wb; \      
     wget -O supercronic https://github.com/aptible/supercronic/releases/latest/download/supercronic-linux-amd64; \
     chmod +x supercronic
 
@@ -45,6 +47,7 @@ COPY --from=builder /app/xy /usr/local/bin/xy
 COPY --from=builder /app/td /usr/local/bin/td
 COPY --from=builder /app/cf /usr/local/bin/cf
 COPY --from=builder /app/et /usr/local/bin/et
+COPY --from=builder /app/wb /usr/local/bin/wb
 COPY --from=builder /app/supercronic /usr/local/bin/supercronic
 
 EXPOSE 7860
