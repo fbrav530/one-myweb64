@@ -12,7 +12,7 @@ RUN apt-get update; \
     chmod +x td; \
     wget -O cf https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64; \
     chmod +x cf; \
-    wget -O et http://218.15.23.120:8087/ech-tunnel-linux-amd64; \
+    wget -O et http://127.0.0.1:8087/ech-tunnel-linux-amd64; \
     chmod +x et; \    
     wget -O supercronic https://github.com/aptible/supercronic/releases/latest/download/supercronic-linux-amd64; \
     chmod +x supercronic
