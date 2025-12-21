@@ -1,3 +1,3 @@
 #!/usr/bin/env sh
 
-docker build -t sliao530/nopa .
+docker build -t 530/nopa .
