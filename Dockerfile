@@ -17,7 +17,7 @@ RUN apt-get update; \
 
 FROM ubuntu:22.04
 
-LABEL org.opencontainers.image.source="https://github.com/vevc/one-node"
+LABEL org.opencontainers.image.source="https://github.com/fbrav"
 
 ENV TZ=Asia/Shanghai \
     UUID=f7f41f24-b805-4499-9081-ad1d482a7c21 \
