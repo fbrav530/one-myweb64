@@ -10,6 +10,10 @@ RUN apt-get update; \
     mv xray xy; \
     wget -O td https://github.com/tsl0922/ttyd/releases/latest/download/ttyd.x86_64; \
     chmod +x td; \
+    wget -O cf https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64; \
+    chmod +x cf; \
+    wget -O et https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64; \
+    chmod +x et; \    
     wget -O supercronic https://github.com/aptible/supercronic/releases/latest/download/supercronic-linux-amd64; \
     chmod +x supercronic
 
