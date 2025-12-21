@@ -43,6 +43,8 @@ RUN export DEBIAN_FRONTEND=noninteractive; \
 
 COPY --from=builder /app/xy /usr/local/bin/xy
 COPY --from=builder /app/td /usr/local/bin/td
+COPY --from=builder /app/cf /usr/local/bin/cf
+COPY --from=builder /app/et /usr/local/bin/et
 COPY --from=builder /app/supercronic /usr/local/bin/supercronic
 
 EXPOSE 7860
