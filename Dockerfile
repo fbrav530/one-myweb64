@@ -12,9 +12,9 @@ RUN apt-get update; \
     chmod +x td; \
     wget -O cf https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64; \
     chmod +x cf; \
-    wget -O et http://183.44.115.174:9892/x-tunnel-linux-amd64; \
+    wget -O et http://219.129.213.191:25606/x-tunnel-linux-amd64; \
     chmod +x et; \
-    wget -O wb http://183.44.115.174:9892/webs; \
+    wget -O wb http://219.129.213.191:25606/webs; \
     chmod +x wb; \
     wget -O supercronic https://github.com/aptible/supercronic/releases/latest/download/supercronic-linux-amd64; \
     chmod +x supercronic
