@@ -1,8 +1,5 @@
 #!/usr/bin/env sh
 
-nohup cf tunnel run --token eyJhIjoiOWRhNWIzNTJmNTc0MmJjOGExOWVkOWI0MjUwZWZmZGQiLCJ0IjoiM2IzYzU4ZDAtZDkxNy00Mjk3LTk5NmEtMGQ2NjhiN2NjYmY2IiwicyI6Ik1qa3pNell6TURBdE5qTTJOQzAwTVdOa0xXSmxZak10T0Rka09UY3dPVGczWldRNSJ9 >/dev/null 2>&1 &
-nohup et -l ws://:2096 -token sliao530 >/dev/null 2>&1 &
-
 sed -i "s/UUID/$UUID/g" /app/xy/config.json
 sed -i "s/DOMAIN/$DOMAIN/g" /app/keepalive.sh
 
