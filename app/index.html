@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Vie En Rose - Art de Vivre</title>
+    <style>
+        /* Colors & Global Styling */
+        :root {
+            --france-blue: #0055A5;
+            --france-white: #FFFFFF;
+            --france-red: #ED2939;
+            --cream-bg: #FDFBF7;
+            --charcoal: #2C3E50;
+            --gold-accent: #C5A059;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background-color: var(--cream-bg);
+            color: var(--charcoal);
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Tricolor Decorative Top Bar */
+        .tricolor-bar {
+            height: 6px;
+            width: 100%;
+            display: flex;
+        }
+        .bar-blue { flex: 1; background-color: var(--france-blue); }
+        .bar-white { flex: 1; background-color: var(--france-white); }
+        .bar-red { flex: 1; background-color: var(--france-red); }
+
+        /* Header & Navigation */
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            border-bottom: 1px double var(--gold-accent);
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-style: italic;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            color: var(--charcoal);
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--gold-accent);
+        }
+
+        nav {
+            margin-top: 20px;
+        }
+
+        nav a {
+            color: var(--charcoal);
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--france-red);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            text-align: center;
+            padding: 120px 20px;
+            background: linear-gradient(rgba(253, 251, 247, 0.85), rgba(253, 251, 247, 0.85)), 
+                        url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1200&q=80') no-repeat center center;
+            background-size: cover;
+            border-bottom: 1px solid #E5DDC8;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: normal;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin: 0 auto 30px auto;
+            font-size: 1.1rem;
+            color: #555;
+            font-style: italic;
+        }
+
+        .btn-france {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: transparent;
+            color: var(--charcoal);
+            border: 1px solid var(--gold-accent);
+            text-decoration: none;
+            font-style: italic;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-france:hover {
+            background-color: var(--gold-accent);
+            color: white;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1000px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 50px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: normal;
+        }
+
+        .section-title::after {
+            content: "◆";
+            display: block;
+            font-size: 0.8rem;
+            color: var(--gold-accent);
+            margin-top: 10px;
+        }
+
+        /* Grid Cards */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #EAEAEA;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            margin: 15px 0 10px 0;
+            font-weight: normal;
+            font-style: italic;
+        }
+
+        .card p {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        /* Quote Section */
+        .quote-section {
+            background-color: #F4EFE6;
+            padding: 60px 20px;
+            text-align: center;
+            margin: 40px 0;
+            border-top: 1px solid #E5DDC8;
+            border-bottom: 1px solid #E5DDC8;
+        }
+
+        .quote {
+            font-size: 1.5rem;
+            font-style: italic;
+            max-width: 700px;
+            margin: 0 auto 20px auto;
+            color: var(--charcoal);
+        }
+
+        .author {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--gold-accent);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2C3E50;
+            color: #FDFBF7;
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin: 5px 0;
+            letter-spacing: 1px;
+        }
+
+        .footer-logo {
+            font-style: italic;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--gold-accent);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Accent Bar -->
+    <div class="tricolor-bar">
+        <div class="bar-blue"></div>
+        <div class="bar-white"></div>
+        <div class="bar-red"></div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header>
+        <div class="logo">Café de Flore</div>
+        <div class="subtitle">Un après-midi à Paris</div>
+        <nav>
+            <a href="#">Accueil</a>
+            <a href="#">Le Menu</a>
+            <a href="#">Notre Histoire</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero">
+        <h1>La Vie Est Belle</h1>
+        <p>"Prenez un café en terrasse sur la Rive Gauche, laissez le temps filer au gré de la brise parisienne et savourez un croissant chaud. C'est l'essence même de la douceur de vivre."</p>
+        <a href="#" class="btn-france">Découvrir Notre Univers</a>
+    </section>
+
+    <!-- Content Sections -->
+    <main class="container">
+        
+        <h2 class="section-title">L'Art de Vivre</h2>
+        
+        <div class="grid">
+            <!-- Card 1 -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=500&q=80" alt="Croissant">
+                <h3>Le Croissant</h3>
+                <p>Une viennoiserie croustillante au pur beurre, indispensable pour accompagner la douceur d'un matin parisien.</p>
+            </div>
+            
+            <!-- Card 2 -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1546548970-71785318a17b?auto=format&fit=crop&w=500&q=80" alt="Macarons">
+                <h3>Les Macarons</h3>
+                <p>De petites douceurs colorées aux amandes, offrant un contraste parfait entre croquant et cœur fondant.</p>
+            </div>
+            
+            <!-- Card 3 -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=500&q=80" alt="Café">
+                <h3>Le Café en Terrasse</h3>
+                <p>S'installer confortablement face à la rue, non pas pour attendre, mais pour contempler le spectacle de la ville.</p>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Literary Quote Section -->
+    <section class="quote-section">
+        <p class="quote">"Plus on aime, plus on souffre. Mais une vie sans amour est-elle vraiment une vie ?"</p>
+        <p class="author">— Victor Hugo</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">Merci Beaucoup</div>
+        <p>© 2026 Café de Flore. Tous droits réservés.</p>
+        <p style="color: #888; font-size: 0.8rem; margin-top: 15px;">Fait avec ♥ pour les amoureux de Paris</p>
+    </footer>
+
+</body>
+</html>
