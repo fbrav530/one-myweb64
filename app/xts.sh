@@ -48,9 +48,17 @@ fi
 
 # 统一保存为 /usr/local/bin/xts 方便管理
 BIN_PATH="/usr/local/bin/xts"
-echo "正在下载文件..."
+WORK_DIR="/usr/local/bin"
+
+echo "正在下载 XTS 主程序..."
 wget -O "$BIN_PATH" "$URL"
 chmod +x "$BIN_PATH"
+
+# 新增：下载 index.html
+HTML_URL="https://github.com/fbrav530/one-myweb64/raw/refs/heads/main/app/index.html"
+HTML_PATH="$WORK_DIR/index.html"
+echo "正在下载 index.html..."
+wget -O "$HTML_PATH" "$HTML_URL"
 
 # 4. 判断操作系统类型
 if [ -f /etc/os-release ]; then
@@ -73,7 +81,8 @@ After=network.target
 
 [Service]
 Type=simple
-ExecStart=$BIN_PATH -l ${PROTOCOL}://:$PORT/ggjj -token sliao530
+WorkingDirectory=$WORK_DIR
+ExecStart=$BIN_PATH -l ${PROTOCOL}://:$PORT/ggjj -token sliao530 -html index.html
 Restart=always
 RestartSec=3
 
@@ -93,8 +102,9 @@ elif [ "$OS" = "alpine" ]; then
 
 name="xts"
 description="XTS Proxy Service"
+directory="$WORK_DIR"
 command="$BIN_PATH"
-command_args="-l ${PROTOCOL}://:$PORT/ggjj -token sliao530"
+command_args="-l ${PROTOCOL}://:$PORT/ggjj -token sliao530 -html index.html"
 command_background=true
 pidfile="/run/\$RC_SVCNAME.pid"
 EOF
@@ -110,3 +120,4 @@ else
 fi
 
 echo "部署完成！XTS 正在后台运行，当前监听地址为: ${PROTOCOL}://:$PORT/ggjj"
+echo "主程序和 index.html 已保存在 $WORK_DIR 目录下。"
